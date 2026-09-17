@@ -43,6 +43,7 @@ st.markdown("""
         font-size: 2.5rem;
         font-weight: 700;
         margin: 10px 0;
+        color: #212529;
     }
     .metric-label {
         color: #6c757d;
