@@ -21,7 +21,7 @@ from src.health_score import RISK_COLORS, generate_maintenance_insight
 # Configure Streamlit page
 st.set_page_config(
     page_title="AeroTwin | Engine Health",
-    page_icon="✈️",
+    page_icon=os.path.join(os.path.dirname(__file__), "logo.png"),
     layout="wide",
     initial_sidebar_state="expanded"
 )
