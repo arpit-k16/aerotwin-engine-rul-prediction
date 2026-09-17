@@ -104,8 +104,7 @@ def load_data():
         return None, None
 
 def main():
-    logo_path = os.path.join(os.path.dirname(__file__), "logo.png")
-    st.image(logo_path, width=600)
+    st.title("✈️ AeroTwin — Engine Health Intelligence")
     st.markdown("Predictive maintenance dashboard using NASA C-MAPSS telemetry.")
     
     df, shap_img_path = load_data()
