@@ -29,10 +29,7 @@ st.set_page_config(
 # Custom CSS for styling
 st.markdown("""
 <style>
-    /* Modern Glassmorphism Theme */
-    .stApp {
-        background-color: #0e1117;
-    }
+    /* Modern Glassmorphism Theme - Gold Edition */
     .metric-card {
         background: linear-gradient(145deg, rgba(30, 34, 43, 0.6) 0%, rgba(20, 24, 31, 0.8) 100%);
         backdrop-filter: blur(12px);
@@ -46,8 +43,8 @@ st.markdown("""
     }
     .metric-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.5);
-        border-color: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 12px 48px 0 rgba(212, 175, 55, 0.15);
+        border-color: rgba(212, 175, 55, 0.5);
     }
     .metric-value {
         font-size: 2.8rem;
@@ -76,7 +73,7 @@ st.markdown("""
         border: 1px solid rgba(255, 255, 255, 0.05);
         padding: 16px;
         border-radius: 8px;
-        border-left: 4px solid #4dabf7;
+        border-left: 4px solid #d4af37;
         margin-top: 24px;
         line-height: 1.5;
     }
@@ -107,7 +104,8 @@ def load_data():
         return None, None
 
 def main():
-    st.title("✈️ AeroTwin — Engine Health Intelligence")
+    logo_path = os.path.join(os.path.dirname(__file__), "logo.png")
+    st.image(logo_path, width=600)
     st.markdown("Predictive maintenance dashboard using NASA C-MAPSS telemetry.")
     
     df, shap_img_path = load_data()
