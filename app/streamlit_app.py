@@ -29,36 +29,56 @@ st.set_page_config(
 # Custom CSS for styling
 st.markdown("""
 <style>
-    .reportview-container {
-        background: #f0f2f6;
+    /* Modern Glassmorphism Theme */
+    .stApp {
+        background-color: #0e1117;
     }
     .metric-card {
-        background-color: white;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(145deg, rgba(30, 34, 43, 0.6) 0%, rgba(20, 24, 31, 0.8) 100%);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 24px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
         text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+    .metric-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.5);
+        border-color: rgba(255, 255, 255, 0.15);
     }
     .metric-value {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin: 10px 0;
-        color: #212529;
+        font-size: 2.8rem;
+        font-weight: 800;
+        margin: 12px 0;
+        color: #f8f9fa;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        font-family: 'Inter', 'Segoe UI', sans-serif;
     }
     .metric-label {
-        color: #6c757d;
-        font-size: 1rem;
+        color: #a8b2c1;
+        font-size: 0.85rem;
+        font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 1.5px;
+    }
+    .metric-sub {
+        color: #6e7a8a; 
+        font-size: 0.85rem;
+        font-weight: 500;
     }
     .disclaimer {
         font-size: 0.85rem;
-        color: #856404;
-        background-color: #fff3cd;
-        padding: 10px;
-        border-radius: 5px;
-        border-left: 5px solid #ffeeba;
-        margin-top: 20px;
+        color: #a8b2c1;
+        background: rgba(30, 34, 43, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 16px;
+        border-radius: 8px;
+        border-left: 4px solid #4dabf7;
+        margin-top: 24px;
+        line-height: 1.5;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -123,17 +143,17 @@ def main():
         <div class="metric-card">
             <div class="metric-label">Estimated RUL</div>
             <div class="metric-value">{int(last_cycle_data['predicted_rul'])}</div>
-            <div style="color: #6c757d; font-size: 0.9rem;">Remaining Cycles</div>
+            <div class="metric-sub">Remaining Cycles</div>
         </div>
         """, unsafe_allow_html=True)
         
     with col3:
-        score_color = RISK_COLORS.get(last_cycle_data['risk_category'], "#000000")
+        score_color = RISK_COLORS.get(last_cycle_data['risk_category'], "#ffffff")
         st.markdown(f"""
         <div class="metric-card" style="border-bottom: 4px solid {score_color};">
             <div class="metric-label">Health Score</div>
-            <div class="metric-value" style="color: {score_color};">{last_cycle_data['health_score']:.1f}</div>
-            <div style="color: #6c757d; font-size: 0.9rem;">out of 100</div>
+            <div class="metric-value" style="color: {score_color}; text-shadow: 0 0 15px {score_color}40;">{last_cycle_data['health_score']:.1f}</div>
+            <div class="metric-sub">out of 100</div>
         </div>
         """, unsafe_allow_html=True)
         
@@ -141,7 +161,7 @@ def main():
         st.markdown(f"""
         <div class="metric-card">
             <div class="metric-label">Risk Level</div>
-            <div class="metric-value" style="color: {score_color}; font-size: 2rem;">{last_cycle_data['risk_category']}</div>
+            <div class="metric-value" style="color: {score_color}; font-size: 2rem; text-shadow: 0 0 15px {score_color}40;">{last_cycle_data['risk_category']}</div>
         </div>
         """, unsafe_allow_html=True)
 
