@@ -1,0 +1,16 @@
+feature,mean_abs_shap
+cycle,8.90608
+sensor_11_rmean_5,3.9639113
+sensor_4_rmean_10,3.6976962
+sensor_4_rmean_5,3.3187525
+sensor_4_ewma_10,2.881231
+sensor_15_rmean_10,2.8654695
+sensor_2_rmean_10,2.5752978
+sensor_14_rmean_20,1.8418691
+sensor_8_rmean_20,1.1353921
+sensor_3_rmean_10,1.1307615
+sensor_3_ewma_10,1.1099442
+sensor_2_rmean_5,1.1029347
+sensor_15_ewma_10,1.1023656
+sensor_15_rmean_5,1.0967549
+sensor_9_rstd_20,1.0392307

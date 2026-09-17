@@ -1,0 +1,40 @@
+{
+  "best_model": "XGBoost",
+  "validation": {
+    "Baseline": {
+      "MAE": 36.93,
+      "RMSE": 41.72
+    },
+    "Linear Regression": {
+      "MAE": 12.8,
+      "RMSE": 15.86
+    },
+    "Random Forest": {
+      "MAE": 9.71,
+      "RMSE": 14.57
+    },
+    "XGBoost": {
+      "MAE": 9.57,
+      "RMSE": 14.1
+    }
+  },
+  "test": {
+    "Baseline": {
+      "MAE": 35.9,
+      "RMSE": 43.1
+    },
+    "Linear Regression": {
+      "MAE": 14.71,
+      "RMSE": 18.68
+    },
+    "Random Forest": {
+      "MAE": 12.52,
+      "RMSE": 17.27
+    },
+    "XGBoost": {
+      "MAE": 12.31,
+      "RMSE": 17.44
+    }
+  },
+  "baseline_pred": 86.95881891190146
+}
