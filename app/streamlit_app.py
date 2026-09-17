@@ -104,7 +104,7 @@ def load_data():
         return None, None
 
 def main():
-    st.title("✈️ AeroTwin — Engine Health Intelligence")
+    st.markdown('<h1 style="font-family: Inter, Segoe UI, sans-serif;"><span style="color: #d4af37;">Aero</span>Twin — Engine Health Intelligence</h1>', unsafe_allow_html=True)
     st.markdown("Predictive maintenance dashboard using NASA C-MAPSS telemetry.")
     
     df, shap_img_path = load_data()
