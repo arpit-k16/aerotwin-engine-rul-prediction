@@ -109,8 +109,8 @@ The project includes an interactive Streamlit dashboard (`app/streamlit_app.py`)
 ### Installation
 
 ```bash
-git clone https://github.com/yourusername/aerotwin.git
-cd aerotwin
+git clone https://github.com/LakshayBansal06/aerotwin-engine-rul-prediction.git
+cd aerotwin-engine-rul-prediction
 pip install -r requirements.txt
 ```
 
@@ -131,3 +131,8 @@ streamlit run app/streamlit_app.py
 ```bash
 pytest tests/
 ```
+
+## Contributors
+
+- Arpit Kumar
+- Lakshay Bansal
